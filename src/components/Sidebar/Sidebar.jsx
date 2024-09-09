@@ -5,17 +5,17 @@ const Sidebar = () => {
   // Handle button click
   const handleClick = () => {
     console.log("Button was clicked!");
-    // Add your desired functionality here
   };
 
-  // State to store the person's symbol
+  // State to store the person's symptom and days
   const [symbol, setSymbol] = useState("");
+  const [days, setDays] = useState("");
 
   // Function to handle the form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Symbol submitted: ${symbol}`);
-    // Here you can add additional functionality, such as sending the symbol to a server
+    alert(`Symptom: ${symbol}\nDays observed: ${days}`);
+    // Here you can add additional functionality, such as sending data to a server
   };
 
   return (
@@ -28,8 +28,7 @@ const Sidebar = () => {
       </div>
 
       <div className="symbol-collection">
-      <img src="src/assets/symptom-checkers.jpg" alt="Symptom Checker" className="sidebar-image" />
-
+        <img src="src/assets/symptom-checkers.jpg" alt="Symptom Checker" className="sidebar-image" />
         <h2>Enter Your Symptom</h2>
         
         <form onSubmit={handleSubmit}>
@@ -40,6 +39,15 @@ const Sidebar = () => {
             placeholder="Enter your symptoms here"
             required
           />
+          
+          <input
+            type="number"
+            value={days}
+            onChange={(e) => setDays(e.target.value)}
+            placeholder="Number of days"
+            required
+          />
+          
           <button type="submit">Submit</button>
         </form>
       </div>
