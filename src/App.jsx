@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import Sidebar from './components/sidebar/Sidebar'
+import React from "react";
+import Sidebar from "./Sidebar";
 
 const App = () => {
+    return (
+        <div>
+            <Sidebar />
+        </div>
+    );
+};
 
-
-  return (
-    <>
-      <Sidebar/>
-    </>
-  )
-}
-
-export default App
+export default App;
